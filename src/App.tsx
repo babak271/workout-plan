@@ -37,6 +37,7 @@ function App() {
         <div className="flex flex-col w-1/2">
           <h2 className="text-lg text-center">{item.name}</h2>
           <p className="text-sm">{item.repeat}</p>
+            <iframe className="h-20 w-20" src={item.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <img className="h-40 w-40" src={item.image} />
       </div>
