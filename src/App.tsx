@@ -1,5 +1,6 @@
 import {useState} from "react";
 import data from "./data.json"
+import classNames from "classnames";
 
 interface Exercise{
   name:string;
@@ -23,8 +24,13 @@ function App() {
     };
 
     const dayButton = dayKeys.map((dayKey)=>(
-      <button className="rounded bg-sky-600 px-2 py-1 text-base font-semibold text-white" onClick={()=>handleDayClick(dayKey)}>{dayKey}</button>
-    ));
+      <button className={classNames(
+          "rounded  px-2 py-1 text-base font-semibold text-white",
+          {"bg-sky-600": currentDay==dayKey},
+          {"bg-sky-300": currentDay!==dayKey},
+        )} 
+        onClick={()=>handleDayClick(dayKey)}>{dayKey}</button>
+      ));
 
     const listItem = day.map(item =>
       <div className="flex justify-between border-2 border-solid border-sky-100 rounded-sm my-1 p-3">
