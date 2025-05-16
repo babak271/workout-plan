@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from "classnames";
 
 export default function dayButton(dayKeys, currentDay, handleDayClick) { 
-  return dayKeys.map((dayKey, k)=>(
+  return dayKeys.map(dayKey=>(
     <React.Fragment key={dayKey}>
       <button className={classNames(
         "rounded  px-2 py-1 text-base font-semibold text-white",
@@ -14,3 +14,4 @@ export default function dayButton(dayKeys, currentDay, handleDayClick) {
     </React.Fragment>
   ));
 }
+
