@@ -4,7 +4,6 @@ import header from "./components/header.tsx"
 import title from "./components/title.tsx"
 import dayButton from "./components/day_buttons.tsx"
 import listItem from "./components/list_items.tsx"
-import footer from "./components/footer.tsx"
 
 interface Exercise{
   name:string;

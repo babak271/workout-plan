@@ -1,5 +1,4 @@
 import React from 'react'
-import classNames from "classnames";
 import barSvg from '../assets/bar.svg'
 
 export default function title() { 
