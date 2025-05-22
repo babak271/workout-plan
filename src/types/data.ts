@@ -6,6 +6,13 @@ export interface Exercise{
   video:string;
 } 
 
-export interface DayData {
-  [key: string]:Exercise[];
+export interface DayData{
+  name:string;
+  title_info:string;
+  exercise:Exercise[];
 }
+
+export interface Plan {
+  [key: number]:DayData[];
+}
+
