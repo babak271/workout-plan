@@ -6,10 +6,14 @@ export interface Exercise{
   video:string;
 } 
 
+export interface ComboExercise{
+  [key: number]:Exercise[]
+}
+
 export interface DayData{
   name:string;
   title_info:string;
-  exercise:Exercise[];
+  exercise:ComboExercise[];
 }
 
 export interface Plan {
