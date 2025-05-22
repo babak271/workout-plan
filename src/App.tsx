@@ -4,36 +4,24 @@ import header from "./components/header.tsx"
 import title from "./components/title.tsx"
 import dayButton from "./components/day_buttons.tsx"
 import listItem from "./components/list_items.tsx"
-
-interface Exercise{
-  name:string;
-  repeat:string;
-  image:string;
-  video:string;
-}
-
-interface DayData {
-  [key: string]:Exercise[];
-}
+import type {DayData} from "./types/data.ts"
 
 function App() {
 
-  const dayData = data as DayData;
+  const dayData: DayData = data;
   const dayKeys = Object.keys(dayData)
-  const [currentDay, setCurrentDay] = useState<keyof DayData>(dayKeys[0])
+  const [currentDay, setCurrentDay] = useState<keyof DayData>(dayKeys[0] as keyof DayData)
   const day = dayData[currentDay];
   const handleDayClick = (day: keyof DayData) => {
     setCurrentDay(day)
   };
-
-
 
   return (
     <>
       {header()}
       <div className="bg-slate-50">
         {title()}
-        {dayButton(dayKeys, currentDay, handleDayClick)}
+        {dayButton({dayKeys, currentDay, handleDayClick})}
         {listItem(day)}
       </div>
     </>

@@ -1,6 +1,17 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-function ImageWithModal({ item }) {
+interface Day{
+  name:string;
+  repeat:string;
+  image:string;
+  video:string;
+}
+
+interface ImageWithModalProps {
+  item: Day;
+}
+
+function ImageWithModal({ item }: ImageWithModalProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState('');
 
@@ -23,7 +34,7 @@ function ImageWithModal({ item }) {
       <img
         className="border border-b border-slate-200 rounded-xl my-3 h-30 w-30 cursor-pointer"
         src={item.image}
-        alt={item.alt || 'Click to view full screen'}
+        alt={'Click to view full screen'}
         onClick={openModal}
       />
 

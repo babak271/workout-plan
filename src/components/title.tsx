@@ -1,4 +1,3 @@
-import React from 'react'
 import barSvg from '../assets/bar.svg'
 
 export default function title() { 

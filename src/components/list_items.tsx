@@ -1,14 +1,15 @@
 import React from 'react'
 import ImageWithModal from "./image_with_modal.tsx"
+import type {Exercise} from "../types/data.ts"
 
-export default function listItem(day) { 
+export default function listItem(day: Exercise[]) { 
   return (
   <>
     <div className="flex flex-col justify-center px-2">
       {day.map((item, k) =>
-        <React.Fragment key={k}>
+        <React.Fragment key={Number(k)}>
           <div className="border border-b border-slate-200 bg-white rounded-xl p-2 mb-2">
-            <p className="text-xs text-sky-600">Movement {k+1}</p>
+            <p className="text-xs text-sky-600">Movement {Number(k)+1}</p>
             <h2 className="text-lg py-1">{item.name}</h2>
             <p className="text-sm text-gray-800">{item.repeat}</p>
             <ImageWithModal item={item} />

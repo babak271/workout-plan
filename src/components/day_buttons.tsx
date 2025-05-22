@@ -1,7 +1,14 @@
 import React from 'react'
 import classNames from "classnames";
+import type {DayData} from "../types/data.ts"
 
-export default function dayButton(dayKeys, currentDay, handleDayClick) { 
+interface DayButtonProps {
+  dayKeys: (keyof DayData)[];
+  currentDay: keyof DayData;
+  handleDayClick: (dayKey: keyof DayData) => void;
+}
+
+export default function dayButton({dayKeys, currentDay, handleDayClick}: DayButtonProps) { 
   return ( 
     <>
       <div className="flex justify-between space-x-2 py-2 px-2">

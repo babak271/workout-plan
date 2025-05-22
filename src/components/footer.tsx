@@ -1,4 +1,3 @@
-import React from 'react'
 import homeSvg from '../assets/home.svg'
 
 export default function footer() { 
