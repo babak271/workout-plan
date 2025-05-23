@@ -9,7 +9,7 @@ export default function listItem(day: DayData) {
       {day.exercise.map((comboItem, k) => {
 
         return (<React.Fragment key={Number(k)}>
-          <div className="border border-b border-slate-200 bg-white rounded-xl p-2 mb-2">
+          <div className="border border-1 border-slate-100 shadow-sm shadow-slate-200 bg-white rounded-xl p-4 mb-3">
             {makeMovementTitle(k, comboItem)}
             {makeMovementName(comboItem)}
             {getRepeat(comboItem)}
@@ -60,7 +60,7 @@ function getRepeat(comboItem:ComboExercise){
 
 function getComboImage(comboItem:ComboExercise){
   return (
-    <div className="flex flex-left">
+    <div className="flex flex-left space-x-4 overflow-x-auto">
       {comboItem.map((item, index) =>(
         <React.Fragment key={index}>
           {item.image && (<ImageWithModal item={item} />)}

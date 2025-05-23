@@ -33,7 +33,7 @@ function ImageWithModal({ item }: ImageWithModalProps) {
   return (
     <>
       <img
-        className="border border-b border-slate-200 rounded-xl my-3 h-30 w-30 cursor-pointer"
+        className="border border-1 border-slate-200 shadow-xs rounded-xl my-3 h-35 w-35 cursor-pointer"
         src={item.image}
         alt={'Click to view full screen'}
         onClick={openModal}
