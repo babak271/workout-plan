@@ -2,7 +2,7 @@ import React, {useRef, useEffect, useState} from 'react'
 import classNames from "classnames";
 
 interface DayButtonProps {
-  days: [number, string];
+  days: [number, string][];
   currentDay: number;
   handleDayClick: (dayKey: number) => void;
 }

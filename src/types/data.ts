@@ -6,9 +6,7 @@ export interface Exercise{
   video:string;
 } 
 
-export interface ComboExercise{
-  [key: number]:Exercise[]
-}
+export type ComboExercise = Exercise[]
 
 export interface DayData{
   name:string;
@@ -16,7 +14,5 @@ export interface DayData{
   exercise:ComboExercise[];
 }
 
-export interface Plan {
-  [key: number]:DayData[];
-}
+export type Plan = DayData[]
 

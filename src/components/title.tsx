@@ -1,6 +1,6 @@
 import barSvg from '../assets/bar.svg'
 
-export default function title(title_info) { 
+export default function title(title_info: string) { 
   return (
     <>
       <div className="flex flex-col justify-between py-4">

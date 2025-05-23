@@ -8,9 +8,9 @@ import type {Plan} from "./types/data.ts"
 
 function App() {
 
-  const plan: Plan = data;
-  const days = plan.map((day, k)=>[k, day.name])
-  const [currentDay, setCurrentDay] = useState<keyof Plan>(days[0][0])
+  const plan: Plan = data as Plan;
+  const days: [number, string][] = plan.map((day, k)=>[k, day.name])
+  const [currentDay, setCurrentDay] = useState<number>(days[0][0] as number)
   const day = plan[currentDay];
   const handleDayClick = (dayKey: number) => {
     setCurrentDay(dayKey)
@@ -20,9 +20,9 @@ function App() {
     <>
       {header()}
       <div className="bg-slate-50">
-        {title(day.title_info)}
-        {dayButton({days, currentDay, handleDayClick})}
-        {listItem(day)}
+        {day && title(day.title_info)}
+        {day && dayButton({days, currentDay, handleDayClick})}
+        {day && listItem(day)}
       </div>
     </>
   )

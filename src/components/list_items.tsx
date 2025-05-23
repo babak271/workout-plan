@@ -1,8 +1,8 @@
 import React from 'react'
 import ImageWithModal from "./image_with_modal.tsx"
-import type {DayData} from "../types/data.ts"
+import type {DayData, ComboExercise} from "../types/data.ts"
 
-export default function listItem(day: DayData[]) { 
+export default function listItem(day: DayData) { 
   return (
   <>
     <div className="flex flex-col justify-center px-2">
@@ -24,7 +24,7 @@ export default function listItem(day: DayData[]) {
   );
 }
 
-function makeMovementTitle(k, comboItem){
+function makeMovementTitle(k:number, comboItem:ComboExercise){
   return (
     <p className="text-xs text-sky-600">
       Movement {Number(k) + 1}
@@ -37,7 +37,7 @@ function makeMovementTitle(k, comboItem){
   );
 }
 
-function makeMovementName(comboItem){
+function makeMovementName(comboItem:ComboExercise){
   return (
     <h2 className="text-sm py-1">
       {comboItem.map((item, index) =>(
@@ -50,7 +50,7 @@ function makeMovementName(comboItem){
   )
 }
 
-function getRepeat(comboItem){
+function getRepeat(comboItem:ComboExercise){
   return comboItem.map((item, index)=>(
     <React.Fragment key={index}>
       <p className="text-sm text-gray-800">{item.repeat}</p>
@@ -58,7 +58,7 @@ function getRepeat(comboItem){
   ));
 }
 
-function getComboImage(comboItem){
+function getComboImage(comboItem:ComboExercise){
   return (
     <div className="flex flex-left">
       {comboItem.map((item, index) =>(
@@ -70,7 +70,7 @@ function getComboImage(comboItem){
   )
 }
 
-function getComboVideo(comboItem){
+function getComboVideo(comboItem:ComboExercise){
   return comboItem.map((item, index) =>(
     <React.Fragment key={index}>
       {item.video && (<iframe className="border border-b border-slate-200 rounded-xl h-30 w-50" src={item.video} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>)}
