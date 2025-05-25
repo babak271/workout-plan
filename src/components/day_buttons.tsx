@@ -10,7 +10,7 @@ interface DayButtonProps {
 export default function dayButton({days, currentDay, handleDayClick}: DayButtonProps) { 
   return ( 
     <div 
-        className="flex justify-between sticky top-0 space-x-2 py-2 px-2 bg-white/95 bg-transparent shadow-sm z-9"
+        className="flex justify-between sticky top-0 space-x-2 py-3 px-2 bg-white/95 bg-transparent shadow-sm z-9"
       >
     {days.map((day)=>{
       const [dayKey, dayName] = day;

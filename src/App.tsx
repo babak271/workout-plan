@@ -1,6 +1,7 @@
 import {useState} from "react";
 import data from "./data.json"
 import header from "./components/header.tsx"
+import footer from "./components/footer.tsx"
 import title from "./components/title.tsx"
 import dayButton from "./components/day_buttons.tsx"
 import listItem from "./components/list_items.tsx"
@@ -24,6 +25,7 @@ function App() {
         {day && dayButton({days, currentDay, handleDayClick})}
         {day && listItem(day)}
       </div>
+      {footer()}
     </>
   )
 }

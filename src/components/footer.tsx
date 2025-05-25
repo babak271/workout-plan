@@ -1,12 +1,17 @@
-import homeSvg from '../assets/home.svg'
+import HomeIcon from '../assets/home.svg?react';
+import EditIcon from '../assets/edit.svg?react'
 
 export default function footer() { 
   return (
     <>
-      <div className="flex flex-col justify-between py-4">
-        <div className="flex justify-center">
-          <img className="w-5 mr-2" src={homeSvg} />
-          <p className="text-sm text-pink-700">3 Days / Week</p>
+      <div className="flex justify-between py-3 bg-white shadow-lg rounded sticky bottom-0">
+        <div className="flex flex-col mx-8 place-content-center">
+          <HomeIcon className="w-6 fill-(--color-primary)" />
+          <p className="text-xs">Home</p>
+        </div>
+        <div className="flex flex-col mx-8 justify-center content-center">
+          <EditIcon className="w-6 fill-(--color-secondary)" />
+          <p className="text-xs">Edit</p>
         </div>
       </div>
     </>
