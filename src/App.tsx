@@ -18,7 +18,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="relative">
       {header()}
       <div className="bg-slate-50">
         {day && title(day.title_info)}
@@ -26,7 +26,7 @@ function App() {
         {day && listItem(day)}
       </div>
       {footer()}
-    </>
+    </div>
   )
 }
 
