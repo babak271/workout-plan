@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, useState} from 'react'
+import React from 'react'
 import classNames from "classnames";
 
 interface DayButtonProps {
@@ -8,40 +8,9 @@ interface DayButtonProps {
 }
 
 export default function dayButton({days, currentDay, handleDayClick}: DayButtonProps) { 
-  const buttonContainerRef = useRef<HTMLDivElement>(null)
-  const [isSticky, setIsSticky] = useState(false)
-  const [offsetTop, setOffsetTop] = useState<number | null>(null)
-
-  useEffect(()=>{
-    const buttonElement = buttonContainerRef.current
-    if (buttonElement) {
-      setOffsetTop(buttonElement.offsetTop)
-      const handleScroll = () => {
-        if (buttonElement && offsetTop !== null) {
-          const rect = buttonElement.getBoundingClientRect();
-          if (rect.top <= 0 && window.scrollY > offsetTop) {
-            setIsSticky(true)
-          } else {
-            setIsSticky(false)
-          }
-        }
-      };
-
-      window.addEventListener('scroll', handleScroll)
-
-      return () => {
-        window.removeEventListener('scroll', handleScroll)
-      };
-    }
-  }, [offsetTop]);
-
   return ( 
     <div 
-        ref={buttonContainerRef}
-        className={classNames(
-          "flex justify-between space-x-2 py-2 px-2 bg-white z-9 transition-all duration-200",
-          {'fixed top-0 left-0 right-0 shadow-sm': isSticky}
-        )}
+        className="flex justify-between sticky top-0 space-x-2 py-2 px-2 bg-white/95 bg-transparent shadow-sm z-9"
       >
     {days.map((day)=>{
       const [dayKey, dayName] = day;
