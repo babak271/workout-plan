@@ -29,7 +29,7 @@ function makeMovementTitle(k:number, comboItem:ComboExercise){
     <p className="text-xs text-sky-600">
       Movement {Number(k) + 1}
       {comboItem.length > 1 && (
-        <span className="ml-4 px-2 font-light text-sm text-gray-600 border border-b border-gray-400">
+        <span className="ml-4 px-2 py-1 text-xs rounded text-gray-700/60 border border-b border-gray-400/50">
           Combo
         </span>
       )}
@@ -39,7 +39,7 @@ function makeMovementTitle(k:number, comboItem:ComboExercise){
 
 function makeMovementName(comboItem:ComboExercise){
   return (
-    <h2 className="text-sm py-1">
+    <h2 className="text-lg py-1">
       {comboItem.map((item, index) =>(
         <React.Fragment key={index}>
           {item.name}

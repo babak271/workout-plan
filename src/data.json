@@ -1,6 +1,6 @@
 [
   {
-    "name": "day1",
+    "name": "Day1",
     "title_info": "A balanced plan focusing on the Legs and bottom body.",
     "exercise": [
       [{
@@ -54,7 +54,7 @@
     ]
   },
   {
-    "name": "day2",
+    "name": "Day2",
     "title_info": "More focus on the upper body (shoulders & chest)",
     "exercise": [
       [{
@@ -114,7 +114,7 @@
     ]
   },
   {
-    "name": "day3",
+    "name": "Day3",
     "title_info": "Let's build the upper back.",
     "exercise": [
       [{
